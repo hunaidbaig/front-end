@@ -38,7 +38,9 @@ function Login() {
   const handleGoogleSignIn = async (e)=>{
     e.preventDefault()
     try{
-        await googleSignIn()
+        const {user} = await googleSignIn()
+        localStorage.setItem('user', user?.accessToken)
+        console.log("done", user)
         navigate("/chat")
     }catch(err){
         setError(err.message)
@@ -47,7 +49,7 @@ function Login() {
   return (
     <div className={styles.container}>
       <form onSubmit={(e) => handleSubmit(e)}>
-      <h1>Sign In</h1>
+      <h1>Log In</h1>
       {error && <p className={styles.error}>{error}</p>}
       <label htmlFor="email">Email:</label>
         <input

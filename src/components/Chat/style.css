@@ -3,11 +3,11 @@
     height: 100vh;
 }
 
-.sidebar {
-    flex: 0.5;
-    background-color: #333;
+.close-sidebar {
+    /* flex: 1; */
+    background-color: #202123;
     color: #fff;
-    padding: 20px;
+    /* padding: 20px; */
     overflow-y: auto;
     transition: width 0.3s;
 }
@@ -17,14 +17,7 @@
     width: 0;
     background-color: #333;
     color: #fff;
-    /* padding: 20px; */
-    overflow-y: auto;
-    transition: width 0.3s;
-}
-
-.chat {
-    flex: 3;
-    background-color: #f0f0f0;
     padding: 20px;
     overflow-y: auto;
+    transition: width 0.3s;
 }

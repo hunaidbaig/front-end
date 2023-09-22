@@ -52,7 +52,7 @@ const Footer = ()=>{
                                 </Link>
                             </li>
                         </ul>
-                        <div className="footer-copyright">&copy; 2019 Solid, all rights reserved</div>
+                        <div className="footer-copyright">&copy; all rights reserved</div>
                     </div>
                 </div>
             </footer>  

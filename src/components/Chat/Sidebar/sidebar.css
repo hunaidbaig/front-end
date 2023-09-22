@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   color: #ffffff;
+  background-color: #202123;
 }
 .flex-1 {
   display: flex;
@@ -21,14 +22,21 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.flex-1 .new-chat{
-    padding-right: 40px;
+.flex-1 .new-chat {
+  padding-right: 40px;
 }
-.flex-2 button{
+.flex-2 button {
   margin-bottom: 10px;
 }
 
-.flex-2 span{
-  background-color: #855b5b;
-  padding: 5px;
+.flex-2 span {
+  background-color: #265c78;
+  padding: 4px 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.user {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }

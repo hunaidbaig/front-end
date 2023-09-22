@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../../context/UserAuthContext";
-import 'font-awesome/css/font-awesome.min.css';
+import { FaBars} from "react-icons/fa";
+
 import "./sidebar.css";
 const Sidebar = ({ toggle, toggleHandle }) => {
   const { user, logOut } = useUserAuth();
@@ -9,7 +10,7 @@ const Sidebar = ({ toggle, toggleHandle }) => {
 
   useEffect(() => {
     if (user?.email) {
-      setInitials(user.email.substring(0, 2).toUpperCase());
+      setInitials(user.email.substring(0, 1).toUpperCase());
     }
   }, [user.email]);
 
@@ -28,14 +29,14 @@ const Sidebar = ({ toggle, toggleHandle }) => {
     <div className='sidebar'>
       <div className='flex-1'>
         <button className='new-chat'>+ NewChat</button>
-        <button>toggle</button>
+        <button><FaBars/></button>
       </div>
       <div className='chats'>
         <p>previous chats...</p>
       </div>
       <div className='flex-2'>
         <button onClick={handleLogOut}>Log out</button>
-        <p>
+        <p className="user">
           <span>{initials}</span> {user.email}
         </p>
       </div>

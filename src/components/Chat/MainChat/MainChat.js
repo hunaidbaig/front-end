@@ -2,6 +2,7 @@ import React from 'react'
 import Input from "../Input/Input"
 import Response from '../response/Response';
 import "./mainChat.css"
+import { FaArrowRight} from "react-icons/fa";
 const MainChat = ({ toggle, toggleHandle })=>{
 
     return (
@@ -19,7 +20,7 @@ const MainChat = ({ toggle, toggleHandle })=>{
            </div>
             <div className='input-container'>
                 <input  placeholder="Send a message" type="text" className='chat-input'/>
-                <button>Send</button>
+                <button><FaArrowRight/></button>
             </div>
         </main>
     )

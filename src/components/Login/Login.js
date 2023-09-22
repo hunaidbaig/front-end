@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useUserAuth } from "../../context/UserAuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link } from "react-router-dom";
 import styles from './style.module.css'
 import GoogleButton from "react-google-button";
 
@@ -69,8 +69,9 @@ function Login() {
           id="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Sign In</button>
-        <GoogleButton onClick={handleGoogleSignIn}/>
+        <button type="submit">Log in</button>
+        <GoogleButton class="googleBtn" onClick={handleGoogleSignIn} className={styles.googleBtn} style={{ width: "96%" , borderRadius: "5px"}}/>
+        <p>Don't have an account? <Link to="/signup">sign up</Link></p>
       </form>
     </div>
   );

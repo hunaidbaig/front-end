@@ -1,9 +1,11 @@
 import React from "react";
 import "./response.css";
+import { FaGg} from "react-icons/fa";
 
 function Response() {
   return (
     <div className='container-response'>
+      <span><FaGg/></span>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis
         lorem sit amet quam ultricies aliquam. Curabitur aliquet congue massa,

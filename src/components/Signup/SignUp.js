@@ -24,7 +24,7 @@ function SignUp() {
     try{
      await signUp(email,password)
      setError("")
-     navigate("/signin")
+     navigate("/login")
      console.log(email)
     }catch(err){
       setError(err.message)
@@ -33,7 +33,7 @@ function SignUp() {
 
   return (
     <div className={styles.container}>
-      <form className= 'formContanier' onSubmit={(e) => handleSubmit(e)}>
+      <form className={styles.formContainer} onSubmit={(e) => handleSubmit(e)}>
       <h1>Sign Up</h1>
       {error && <p className={styles.error}>{error}</p>}
       <label htmlFor="email">Email:</label>

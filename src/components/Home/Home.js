@@ -1,9 +1,21 @@
 import { text } from "@fortawesome/fontawesome-svg-core";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import {FaLocationArrow } from "react-icons/fa";
 import Footer from "../Footer/Footer";
 import "./style.css";
 
 function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const userToken = localStorage.getItem('user');
+    if (userToken) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
   return (
     <div className='Home'>
       <div className='body-wrap'>
@@ -20,8 +32,14 @@ function Home() {
                         <div className="brand header-brand">
                             <h1 className="m-0">
                                 <div className="hero-copy hero-cta">
+                                  {isLoggedIn ? 
+                                   <Link className="button button-primary" to={'/chat'}>Go To Chat</Link>:
+                                   <>
                                     <Link className="button" to={'/login'}>Login</Link>
                                     <Link className="button button-primary" to={'/signup'}>Signup</Link>
+                                    </>
+                                  }
+                                    
                                 </div>
                             </h1>
                         </div>

@@ -1,8 +1,8 @@
 import { text } from "@fortawesome/fontawesome-svg-core";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {FaLocationArrow } from "react-icons/fa";
 import Footer from "../Footer/Footer";
+import img from "../../hero1.png"
 import "./style.css";
 
 function Home() {
@@ -55,24 +55,16 @@ function Home() {
                   <h1 className='hero-title mt-0'>
                     Introducing Generative AI based Solution
                   </h1>
-                  <p className='hero-paragraph'>
+                  <p className='hero-paragraph' style={{color:"whitesmoke", fontWeight:"bold" }}>
                     This is a groundbreaking approach to information retrieval.
                   </p>
-                  <p className='text-sm mb-1'>
+                  <p className='text-sm mb-1' >
                     Components of the RAG Solution <br/>
                      GPT-4 <br/>
                     LlamaIndex<br/>
                      Vector<br/>
                     Database SentenceTransformer
                   </p>
-                  {/* <div className='hero-cta'>
-                    <Link className='button' to={"/login"}>
-                      Login
-                    </Link>
-                    <Link className='button button-primary' to={"/signup"}>
-                      Signup
-                    </Link>
-                  </div> */}
                 </div>
                 <div className='hero-figure anime-element'>
                   <svg
@@ -103,8 +95,10 @@ function Home() {
                     className='hero-figure-box hero-figure-box-04'
                     data-rotation='-135deg'
                   ></div>
-                  <div className='hero-figure-box hero-figure-box-05'></div>
-                  <div className='hero-figure-box hero-figure-box-06'></div>
+                  <div className='hero-figure-box hero-figure-box-05'>
+                  <img src={img} style={{maxWidth:"100%"}} alt=""/>
+                  </div>
+                  {/* <div className='hero-figure-box hero-figure-box-06'></div> */}
                   <div className='hero-figure-box hero-figure-box-07'></div>
                   <div
                     className='hero-figure-box hero-figure-box-08'

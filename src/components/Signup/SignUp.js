@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from './style.module.css'
 import { useUserAuth } from "../../context/UserAuthContext";
 
@@ -33,7 +33,7 @@ function SignUp() {
 
   return (
     <div className={styles.container}>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className= 'formContanier' onSubmit={(e) => handleSubmit(e)}>
       <h1>Sign Up</h1>
       {error && <p className={styles.error}>{error}</p>}
       <label htmlFor="email">Email:</label>
@@ -55,6 +55,7 @@ function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Sign Up</button>
+        <p>I have already an account. <Link className={styles.loginBtn} to="/login">Login</Link></p>
       </form>
     </div>
   );

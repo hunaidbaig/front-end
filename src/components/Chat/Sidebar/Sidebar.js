@@ -26,13 +26,13 @@ const Sidebar = ({ toggle, toggleHandle }) => {
   };
 
   return (
-    <div className='sidebar'>
+    <div className={ toggle ? 'toggle-sidebar ': 'sidebar'}>
       <div className='flex-1'>
         <button className='new-chat'>+ NewChat</button>
-        <button><FaBars/></button>
+        <button onClick={()=> toggleHandle()} ><FaBars/></button>
       </div>
       <div className='chats'>
-        <p>previous chats...</p>
+        <p>no previous chats...</p>
       </div>
       <div className='flex-2'>
         <button onClick={handleLogOut}>Log out</button>

@@ -4,6 +4,7 @@
     padding: 10px 25%;
     text-align: justify;
     display: flex;
+    margin-bottom: 1rem;
 }
 .container-response span{
 background-color: #0b87f8;

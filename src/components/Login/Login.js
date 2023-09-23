@@ -48,7 +48,7 @@ function Login() {
   }
   return (
     <div className={styles.container}>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className={styles.formContainer} onSubmit={(e) => handleSubmit(e)}>
       <h1>Log In</h1>
       {error && <p className={styles.error}>{error}</p>}
       <label htmlFor="email">Email:</label>

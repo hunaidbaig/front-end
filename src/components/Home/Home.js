@@ -1,9 +1,9 @@
-import { text } from "@fortawesome/fontawesome-svg-core";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import img from "../../hero1.png"
 import "./style.css";
+import './main.css'
 
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,7 +20,7 @@ function Home() {
     <div className='Home'>
       <div className='body-wrap'>
         <header className="site-header">
-                <div className="container">
+                <div className=" container ">
                     <div className="site-header-inner">
                         <div className="brand header-brand">
                             <h1 className="m-0">

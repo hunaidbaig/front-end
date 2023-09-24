@@ -18,8 +18,21 @@
     flex-direction:row;
     height: auto;
 
-
 }
+
+
+.input-full{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 10px;
+  /* right: 22%; */
+  width: 100%;
+  z-index: 2;
+  flex-direction:row;
+  height: auto;
+}
+
 .chat-messages {
     flex-grow: 1;
     overflow-y: auto; 
@@ -34,13 +47,13 @@
   width: 730px;
   border: 1px solid rgba(0, 0, 0, 0.359);
   border-radius: 5px;
-  padding: 1%;
+  padding: 0.75rem;
   outline: none;
   color: white;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 30px 20px -20px;
 }
 
-.input-container button{
+.submitbtn{
     margin-left: 10px;
     border-radius: 5px;
     background-color: #0b87f8;
@@ -93,7 +106,7 @@
 
 .mobileBtn button{
   width: 50px;
-  height: 50px;
+  height: 42px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,9 +117,25 @@
   cursor: pointer;
 }
 
+.navbar span{
+  font-family: League Sparton;
+  font-size: 2.5rem;
+
+}
+
+@media only screen and (max-width: 820px) {
+  .input-full {
+    padding: 10px 1rem;
+  }
+} 
+
 @media only screen and (max-width: 1360px) {
   .sidebar {
      display: none;
+  }
+
+  .mobileBtn {
+    display: none;
   }
 
   .input-container{

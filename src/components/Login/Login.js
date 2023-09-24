@@ -15,7 +15,7 @@ function Login() {
 
   useEffect(()=>{
     let userToken = localStorage.getItem('user');
-    if(userToken) navigate('/chat');
+    if(userToken) navigate('/');
 
   },[])
 
@@ -26,7 +26,7 @@ function Login() {
         const { user } = await signIn(email,password)
         
         console.log(user.accessToken)
-        navigate("/chat")
+        navigate("/")
         localStorage.setItem('user', user?.accessToken)
         setError("")
         console.log(email)

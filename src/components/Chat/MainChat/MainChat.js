@@ -92,7 +92,9 @@ const MainChat = ({ toggle, toggleHandle })=>{
                         <button onClick={()=> toggleHandle()} ><FaBars/></button>
                     </div> 
                 <div>
-                    <p>GE</p>
+                    {/* <img src={process.env.PUBLIC_URL+"dist/images/Chatge-logo.png"} width={110} alt='ge logo' /> */}
+                    <span >ChatGE</span>
+                    {/* <p sty>Health Care</p> */}
                 </div>
 
                 <div onClick={()=> handleLogOut()}>
@@ -116,9 +118,9 @@ const MainChat = ({ toggle, toggleHandle })=>{
                 })
             }
            </div>
-            <form onSubmit={(e)=> inputHandle(e)} className='input-container'>
+            <form onSubmit={(e)=> inputHandle(e)} className= { toggle ? 'input-full': 'input-container'}>
                 <input onChange={(e)=> setText(e.target.value)} value={text} placeholder="Send a message" type="text" className='chat-input'/>
-                <button onClick={(e)=> inputHandle(e)} ><FaArrowRight/></button>
+                <button className='submitbtn' onClick={(e)=> inputHandle(e)} ><FaArrowRight/></button>
             </form>
         </main>
     )

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from './style.module.css'
+import logo from "../../Chatge-logo.png";
 import { useUserAuth } from "../../context/UserAuthContext";
 
 
@@ -32,7 +33,12 @@ function SignUp() {
   };
 
   return (
+    <>
+    <img src={logo} width="200px" alt="log" />
     <div className={styles.container}>
+    <h3>
+          <span> Join ChatGE today </span>and unlock a world of contract management efficiency. Sign up now to access our cutting-edge AI-powered solution and take control of your diverse contracts..
+        </h3>
       <form className={styles.formContainer} onSubmit={(e) => handleSubmit(e)}>
       <h1>Sign Up</h1>
       {error && <p className={styles.error}>{error}</p>}
@@ -58,6 +64,7 @@ function SignUp() {
         <p>I have already an account. <Link className={styles.loginBtn} to="/login">Login</Link></p>
       </form>
     </div>
+    </>
   );
 }
 

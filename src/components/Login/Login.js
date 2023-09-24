@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useUserAuth } from "../../context/UserAuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import styles from "./style.module.css";
-import logo from "../../Chatge-logo.png";
+// import logo from "../../chatge-logo.png";
 import GoogleButton from "react-google-button";
 
 function Login() {
@@ -38,7 +38,7 @@ function Login() {
       const { user } = await googleSignIn();
       localStorage.setItem("user", user?.accessToken);
       console.log("done", user);
-      navigate("/chat");
+      navigate("/");
     } catch (err) {
       setError(err.message);
     }
@@ -47,7 +47,7 @@ function Login() {
 
   return (
     <>
-      <img src={logo} width="200px" alt="log" />
+      <img className={styles.geLogo} src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="200px" alt="log" />
       <div className={styles.container}>
         <h3>
           <span>Welcome to ChatGE,</span> where cutting-edge technology meets

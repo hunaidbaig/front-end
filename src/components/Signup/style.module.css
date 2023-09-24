@@ -124,3 +124,10 @@ label {
     font-size: 2rem;
   }
 }
+
+
+@media (max-width: 450px) {
+  .container h3 span {
+    font-size: 1.6rem;
+  }
+}

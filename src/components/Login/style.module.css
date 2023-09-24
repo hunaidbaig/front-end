@@ -107,6 +107,12 @@ label {
   padding: 10px;
 }
 
+@media (max-width: 450px) {
+  .container h3 span {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 800px) {
   .formContainer {
     width: 85%;
@@ -120,7 +126,7 @@ label {
     margin-bottom: 30px;
   }
   .container h3 span {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
 }

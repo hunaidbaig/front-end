@@ -25,7 +25,7 @@ function Home() {
                         <div className="brand header-brand">
                             <h1 className="m-0">
                                 <Link to={'/'}>
-                                    <img className="header-logo-image" src={process.env.PUBLIC_URL+"dist/images/logo.svg"} alt="Logo" />
+                                    <img className="header-logo-image" src={process.env.PUBLIC_URL+"dist/images/logo.png"} alt="Logo" />
                                 </Link>
                             </h1>
                         </div>

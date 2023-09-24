@@ -14,6 +14,8 @@ const MainChat = ({ toggle, toggleHandle })=>{
     const [text, setText] = useState('');
     const [conversationList, setConversationList] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [typingBtn, setTypingBtn] = useState(true);
+    const [typing, setTyping] = useState(false);
     const [responseResult, setResponseResult] = useState('');
     const { logOut } = useUserAuth();
 
@@ -29,6 +31,8 @@ const MainChat = ({ toggle, toggleHandle })=>{
         setConversationList([...conversationList, newComponent, reponseComponent]);
 
         setText('')
+        setTypingBtn(true)
+        setTyping(true);
 
 
         fetch(`https://flask-ge2-suierlw5oa-uc.a.run.app/query/${text}`)
@@ -46,6 +50,7 @@ const MainChat = ({ toggle, toggleHandle })=>{
 
               setResponseResult('')
               setLoading(false)
+              setTyping(false)
 
         }).catch(error=>{
 
@@ -78,14 +83,6 @@ const MainChat = ({ toggle, toggleHandle })=>{
 
     return (
         <main className="chat">
-            {/* {
-                toggle ? 
-                <div className='my-toggle'>
-                    <button onClick={()=> toggleHandle()} ><FaBars/></button>
-                </div>    
-                 : <></>
-               
-            } */}
                
             <nav className='navbar'>
                     <div className='mobileBtn'>
@@ -120,8 +117,13 @@ const MainChat = ({ toggle, toggleHandle })=>{
             }
            </div>
             <form onSubmit={(e)=> inputHandle(e)} className= { toggle ? 'input-full': 'input-container'}>
-                <input onChange={(e)=> setText(e.target.value)} value={text} placeholder="Send a message" type="text" className='chat-input'/>
-                <button className='submitbtn' onClick={(e)=> inputHandle(e)} ><FaArrowRight/></button>
+                <input disabled={typing} onChange={(e)=> {
+                    const text1 = e.target.value;
+                    setText(text1)
+                    setTypingBtn(text1.trim() === '');
+                    
+                    }} value={text} placeholder="Send a message" type="text" className='chat-input'/>
+                <button disabled={typingBtn}  className= {typingBtn ?'submitbtnDisbaled' : 'submitbtn'} onClick={(e)=> inputHandle(e)} ><FaArrowRight/></button>
             </form>
         </main>
     )

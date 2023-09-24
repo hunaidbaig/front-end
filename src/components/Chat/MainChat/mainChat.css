@@ -65,6 +65,18 @@
     
 }
 
+.submitbtnDisbaled{
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: #8b8b8b;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  
+}
+
+
 .my-toggle{
   width: 100%;
   /* min-height: 10%; */

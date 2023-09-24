@@ -133,6 +133,10 @@
   .sidebar {
      display: none;
   }
+  .navbar span{
+    font-size: 1.5rem;
+  
+  }
 
   .mobileBtn {
     display: none;

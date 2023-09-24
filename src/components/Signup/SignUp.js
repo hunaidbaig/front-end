@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from './style.module.css'
+import logo from "../../Chatge-logo.png";
 import { useUserAuth } from "../../context/UserAuthContext";
+import GoogleButton from "react-google-button";
 
 
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("")
+  const { googleSignIn } = useUserAuth();
+
   const {signUp} = useUserAuth()
   const navigate = useNavigate();
 
@@ -31,8 +35,25 @@ function SignUp() {
     }
   };
 
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      const { user } = await googleSignIn();
+      localStorage.setItem("user", user?.accessToken);
+      console.log("done", user);
+      navigate("/chat");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
+    <>
+    <img src={logo} width="200px" alt="log" />
     <div className={styles.container}>
+    <h3>
+          <span> Join ChatGE today </span>and unlock a world of contract management efficiency. Sign up now to access our cutting-edge AI-powered solution and take control of your diverse contracts..
+        </h3>
       <form className={styles.formContainer} onSubmit={(e) => handleSubmit(e)}>
       <h1>Sign Up</h1>
       {error && <p className={styles.error}>{error}</p>}
@@ -55,9 +76,17 @@ function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Sign Up</button>
+        <div className={styles.or} >or</div>
+        <GoogleButton
+            class="googleBtn"
+            onClick={handleGoogleSignIn}
+            className={styles.googleBtn}
+            style={{ width: "96%", borderRadius: "5px" }}
+          />
         <p>I have already an account. <Link className={styles.loginBtn} to="/login">Login</Link></p>
       </form>
     </div>
+    </>
   );
 }
 

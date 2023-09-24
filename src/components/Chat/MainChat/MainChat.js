@@ -4,7 +4,7 @@ import Response from '../response/Response';
 import "./mainChat.css"
 import { FaArrowRight, FaBars} from "react-icons/fa";
 import { BiLogOut } from 'react-icons/bi';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../../../context/UserAuthContext';
 
 
@@ -90,10 +90,11 @@ const MainChat = ({ toggle, toggleHandle })=>{
             <nav className='navbar'>
                     <div className='mobileBtn'>
                         <button onClick={()=> toggleHandle()} ><FaBars/></button>
-                    </div> 
+                    </div>
+                    
                 <div>
                     {/* <img src={process.env.PUBLIC_URL+"dist/images/Chatge-logo.png"} width={110} alt='ge logo' /> */}
-                    <span >ChatGE</span>
+                    <span ><Link style={{ textDecoration:'none', color: '#0b87f8' }} to={'/'}>ChatGE</Link></span>
                     {/* <p sty>Health Care</p> */}
                 </div>
 

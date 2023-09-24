@@ -3,6 +3,9 @@ import Input from "../Input/Input"
 import Response from '../response/Response';
 import "./mainChat.css"
 import { FaArrowRight, FaBars} from "react-icons/fa";
+import { BiLogOut } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
+import { useUserAuth } from '../../../context/UserAuthContext';
 
 
 
@@ -12,7 +15,9 @@ const MainChat = ({ toggle, toggleHandle })=>{
     const [conversationList, setConversationList] = useState([]);
     const [loading, setLoading] = useState(false);
     const [responseResult, setResponseResult] = useState('');
+    const { logOut } = useUserAuth();
 
+    
     const inputHandle = (e)=>{
         e.preventDefault();
 
@@ -26,7 +31,7 @@ const MainChat = ({ toggle, toggleHandle })=>{
         setText('')
 
 
-        fetch(`http://127.0.0.1:5000/query/${text}`)
+        fetch(`https://flask-ge2-suierlw5oa-uc.a.run.app/query/${text}`)
         .then((respone=> respone.json() )).then(result=>{
             const {response} = result;
 
@@ -58,18 +63,43 @@ const MainChat = ({ toggle, toggleHandle })=>{
         })
     }
 
+    const navigate = useNavigate();
+
+    const handleLogOut = async () => {
+        try {
+        await logOut();
+        localStorage.clear();
+        navigate("/");
+        } catch (err) {
+        console.log(err.message);
+        }
+    };
 
 
     return (
         <main className="chat">
-            {
+            {/* {
                 toggle ? 
                 <div className='my-toggle'>
                     <button onClick={()=> toggleHandle()} ><FaBars/></button>
                 </div>    
                  : <></>
                
-            }
+            } */}
+               
+            <nav className='navbar'>
+                    <div className='mobileBtn'>
+                        <button onClick={()=> toggleHandle()} ><FaBars/></button>
+                    </div> 
+                <div>
+                    <p>GE</p>
+                </div>
+
+                <div onClick={()=> handleLogOut()}>
+                    <BiLogOut color='#0b87f8' cursor={'pointer'} />
+                </div>
+               
+            </nav>
 
            <div className='chat-messages'>
 

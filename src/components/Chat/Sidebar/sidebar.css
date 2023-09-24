@@ -29,6 +29,12 @@
   margin-bottom: 10px;
 }
 
+.flex-2{
+  box-shadow: 0 4px 2px -2px #265c78;
+  border-top: 1px solid aliceblue;
+  border: 1px solid transparent;
+}
+
 .flex-2 span {
   background-color: #265c78;
   padding: 4px 10px;
@@ -40,3 +46,10 @@
   display: flex;
   align-items: center;
 }
+
+
+@media only screen and (max-width: 1360px) {
+  .sidebar {
+     display: none;
+  }
+} 

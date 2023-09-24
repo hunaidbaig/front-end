@@ -4,7 +4,7 @@
     padding: 10px 25%;
     text-align: justify;
     display: flex;
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
 }
 .container-response span{
 background-color: #0b87f8;
@@ -13,3 +13,10 @@ background-color: #0b87f8;
   height: fit-content;
    border-radius: 5px;
 }
+
+@media only screen and (max-width: 1360px) {
+  .container-response {
+    padding: 10px 5%;
+  }
+
+} 

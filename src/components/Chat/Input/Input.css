@@ -13,3 +13,10 @@
   height: fit-content;
   border-radius: 5px;
 }
+
+@media only screen and (max-width: 1360px) {
+  .container-input {
+    padding: 10px 5%;
+  }
+
+} 

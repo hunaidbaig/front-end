@@ -5,7 +5,7 @@ import { useUserAuth } from '../../context/UserAuthContext'
 function ProtectedRoute({children}) {
     let userToken = localStorage.getItem('user')
 
-    console.log(userToken)
+    // console.log(userToken)
     if(!userToken){
         return <Navigate to='/login'/>
     }

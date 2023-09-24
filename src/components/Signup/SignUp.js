@@ -25,7 +25,7 @@ function SignUp() {
      await signUp(email,password)
      setError("")
      navigate("/login")
-     console.log(email)
+    //  console.log(email)
     }catch(err){
       setError(err.message)
     }

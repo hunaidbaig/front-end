@@ -90,8 +90,8 @@ const MainChat = ({ toggle, toggleHandle })=>{
                     </div>
                     
                 <div>
-                    {/* <img src={process.env.PUBLIC_URL+"dist/images/Chatge-logo.png"} width={110} alt='ge logo' /> */}
-                    <span ><Link style={{ textDecoration:'none', color: '#0b87f8' }} to={'/'}>ChatGE</Link></span>
+                    <img src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="250px" alt='ge logo' />
+                    {/* <span ><Link style={{ textDecoration:'none', color: '#0b87f8' }} to={'/'}>ChatGE</Link></span> */}
                     {/* <p sty>Health Care</p> */}
                 </div>
 

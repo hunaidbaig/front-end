@@ -85,9 +85,9 @@ const MainChat = ({ toggle, toggleHandle })=>{
         <main className="chat">
                
             <nav className='navbar'>
-                    <div className='mobileBtn'>
+                    {/* <div className='mobileBtn'>
                         <button onClick={()=> toggleHandle()} ><FaBars/></button>
-                    </div>
+                    </div> */}
                     
                 <div>
                     <Link to={"/"}>

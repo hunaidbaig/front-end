@@ -15,7 +15,7 @@ const Chat = ()=>{
 
     return (
         <div className="chat-container">
-            <Sidebar toggle={toggle} toggleHandle={toggleHandle} />
+            {/* <Sidebar toggle={toggle} toggleHandle={toggleHandle} /> */}
             <MainChat toggle={toggle} toggleHandle={toggleHandle} />
         </div>
     )

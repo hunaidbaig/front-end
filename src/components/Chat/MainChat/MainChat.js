@@ -96,7 +96,7 @@ const MainChat = ({ toggle, toggleHandle })=>{
                 </div>
 
                 <div onClick={()=> handleLogOut()}>
-                    <BiLogOut color='#0b87f8' cursor={'pointer'} />
+                    <BiLogOut color='white' cursor={'pointer'} />
                 </div>
                
             </nav>

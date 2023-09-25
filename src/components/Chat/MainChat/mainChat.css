@@ -141,9 +141,6 @@
   .input-full {
     padding: 10px 1rem;
   }
-  .chat-input {
-    width: 70%;
-  }
 } 
 
 @media only screen and (max-width: 1360px) {
@@ -170,7 +167,7 @@
     width: 200px;
   }
   .chat-input {
-    width: 60%;
+    width: 80%;
   }
 } 
 

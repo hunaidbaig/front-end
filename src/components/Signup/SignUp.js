@@ -48,8 +48,8 @@ function SignUp() {
   };
 
   return (
-    <>
-    <img className={styles.geLogo} src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="200px" alt="log" />
+    <div className={styles.contain}>
+    <img className={styles.geLogo} src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="250px" alt="log" />
     <div className={styles.container}>
     <h3>
           <span> Join ChatGE today </span>and unlock a world of contract management efficiency. Sign up now to access our cutting-edge AI-powered solution and take control of your diverse contracts..
@@ -86,7 +86,7 @@ function SignUp() {
         <p>I have already an account. <Link className={styles.loginBtn} to="/login">Login</Link></p>
       </form>
     </div>
-    </>
+    </div>
   );
 }
 

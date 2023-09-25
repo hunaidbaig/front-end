@@ -46,8 +46,8 @@ function Login() {
 
 
   return (
-    <>
-      <img className={styles.geLogo} src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="200px" alt="log" />
+    <div className={styles.contain}>
+      <img className={styles.geLogo} src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="250px" alt="log" />
       <div className={styles.container}>
         <h3>
           <span>Welcome to ChatGE,</span> where cutting-edge technology meets
@@ -90,7 +90,7 @@ function Login() {
           </p>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

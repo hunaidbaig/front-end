@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import img from "../../hero1.png"
+import img from "../../hero5.png"
 import "./style.css";
 import './main.css'
 
@@ -58,8 +58,11 @@ function Home() {
                   <p className='hero-paragraph' style={{color:"whitesmoke", fontWeight:"bold" }}>
                     This is a groundbreaking approach to information retrieval.
                   </p>
+                  <p className='hero-paragraph' style={{color:"whitesmoke", fontWeight:"bold" }}>
+                    Our solution Retrieval Augmented Generation
+                  </p>
                   <p className='text-sm mb-1' >
-                    Components of the RAG Solution <br/>
+                    Components of our Solution <br/>
                      GPT-4 <br/>
                     LlamaIndex<br/>
                      Vector<br/>
@@ -96,7 +99,7 @@ function Home() {
                     data-rotation='-135deg'
                   ></div>
                   <div className='hero-figure-box hero-figure-box-05'>
-                  <img src={img} style={{maxWidth:"100%"}} alt=""/>
+                  <img src={img} alt=""/>
                   </div>
                   {/* <div className='hero-figure-box hero-figure-box-06'></div> */}
                   <div className='hero-figure-box hero-figure-box-07'></div>
@@ -214,8 +217,8 @@ function Home() {
                           alt='Feature 01'
                         />
                       </div>
-                      <h4 className='feature-title mt-24'>
-                      RAG
+                      <h4 className='feature-title mt-24' style={{textAlign:"left"}}>
+                      Retrieval Augmented Generation (RAG)
                       </h4>
                       <p className='text-sm mb-1' style={{textAlign:"left"}}>
                       Technique that connects LLMs to extensive knowledge sources
@@ -236,7 +239,7 @@ function Home() {
                           alt='Feature 02'
                         />
                       </div>
-                      <h4 className='feature-title mt-24'>
+                      <h4 className='feature-title mt-24' style={{textAlign:"left"}}>
                       Finetuning
                       </h4>
                       <p className='text-sm mb-1' style={{textAlign:"left"}}>

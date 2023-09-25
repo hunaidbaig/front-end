@@ -13,7 +13,7 @@
     position: fixed;
     bottom: 10px;
     /* right: 22%; */
-    width: 84%;
+    width: 100%;
     z-index: 2;
     flex-direction:row;
     height: auto;
@@ -44,7 +44,7 @@
  
   background-color: #444654;
   display: block;
-  width: 730px;
+  width: 48%;
   border: 1px solid rgba(0, 0, 0, 0.359);
   border-radius: 5px;
   padding: 0.75rem;
@@ -141,6 +141,9 @@
   .input-full {
     padding: 10px 1rem;
   }
+  .chat-input {
+    width: 70%;
+  }
 } 
 
 @media only screen and (max-width: 1360px) {
@@ -151,6 +154,9 @@
     font-size: 1.5rem;
   
   }
+  .navbar{
+    padding: .8rem;
+  }
 
   .mobileBtn {
     display: none;
@@ -159,6 +165,12 @@
   .input-container{
     width: 100%;
     padding: 10px;
+  }
+  .navbar-logo{
+    width: 200px;
+  }
+  .chat-input {
+    width: 60%;
   }
 } 
 

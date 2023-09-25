@@ -34,7 +34,7 @@ function Home() {
                                 <div className="hero-copy hero-cta">
                                   {isLoggedIn ? 
                                    <Link to={'/chat'}>
-                                    <img src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="230px" alt="log" />
+                                    <img src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="230px" alt="log" className="chat-logo"/>
                                    </Link>:
                                    <>
                                     <Link className="button" to={'/login'}>Login</Link>
@@ -138,7 +138,7 @@ function Home() {
                           alt='Feature 01'
                         />
                       </div>
-                      <h4 className='feature-title mt-24'>
+                      <h4 className='feature-title mt-24' style={{textAlign:"left"}}>
                         Managing Diverse Contracts
                       </h4>
                       <p className='text-sm mb-1' style={{textAlign:"left"}}>
@@ -162,7 +162,7 @@ function Home() {
                           alt='Feature 02'
                         />
                       </div>
-                      <h4 className='feature-title mt-24'>
+                      <h4 className='feature-title mt-24' style={{textAlign:"left"}}>
                         Complex Information Maze
                       </h4>
                       <p className='text-sm mb-1' style={{textAlign:"left"}}>
@@ -185,7 +185,7 @@ function Home() {
                           alt='Feature 03'
                         />
                       </div>
-                      <h4 className='feature-title mt-24'>
+                      <h4 className='feature-title mt-24' style={{textAlign:"left"}}>
                         Slow Response Time
                       </h4>
                       <p className='text-sm mb-1' style={{textAlign:"left"}}>

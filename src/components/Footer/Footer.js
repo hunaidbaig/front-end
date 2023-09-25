@@ -6,13 +6,13 @@ const Footer = ()=>{
         <>
            <footer className="site-footer">
                 <div className="container">
-                    <div className="site-footer-inner">
-                        <div className="brand footer-brand">
+                    <div className="site-footer-inner" style={{display:"flex" , justifyContent:"center", alignItems: "center", flexDirection:"column"}}>
+                        <div>
                             <Link to="#">
-                                <img className="header-logo-image" src={process.env.PUBLIC_URL+"dist/images/logo.png"} alt="Logo" />
+                                <img className="header-logo-image" src={process.env.PUBLIC_URL+"dist/images/logo.png"} alt="Logo" width="43px"/>
                             </Link>
                         </div>
-                        <div className="footer-copyright">&copy; all rights reserved to xloop digitals</div>
+                        <div>&copy; all rights reserved</div>
                     </div>
                 </div>
             </footer>  

@@ -50,7 +50,7 @@ function Login() {
       <img className={styles.geLogo} src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="250px" alt="log" />
       <div className={styles.container}>
         <h3>
-          <span>Welcome to ChatGE,</span> where cutting-edge technology meets
+          <span>Welcome to ChatGene,</span><br/> where cutting-edge technology meets
           the complex world of contract management in GE Healthcare.
         </h3>
         <form

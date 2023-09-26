@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MainChat from "./MainChat/MainChat";
-import Sidebar from "./Sidebar/Sidebar";
+// import Sidebar from "./Sidebar/Sidebar";
 
 import './style.css'
 

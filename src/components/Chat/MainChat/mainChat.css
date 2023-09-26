@@ -103,6 +103,7 @@
 }
 
 .navbar{
+  position: sticky;
   display: flex;
   justify-content: space-between;
   font-size: 2rem;
@@ -112,10 +113,11 @@
   box-shadow: 0 4px 2px -2px #202123;
   color: #0b87f8;
   font-weight: bold;
-  align-items: start;
+  align-items: center;
   background-color: #0b87f8;
 
 }
+
 
 .mobileBtn button{
   width: 50px;
@@ -164,7 +166,7 @@
     padding: 10px;
   }
   .navbar-logo{
-    width: 200px;
+    width: 160px;
   }
   .chat-input {
     width: 80%;

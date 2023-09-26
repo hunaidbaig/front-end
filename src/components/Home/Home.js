@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import img from "../../hero5.png"
+import img from "../../hero6.png"
 import "./style.css";
 import './main.css'
 
@@ -37,8 +37,8 @@ function Home() {
                                     <img src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="230px" alt="log" className="chat-logo"/>
                                    </Link>:
                                    <>
-                                    <Link className="button" to={'/login'}>Login</Link>
-                                    <Link className="button button-primary" to={'/signup'}>Signup</Link>
+                                    {/* <Link className="button" to={'/login'}>Login</Link> */}
+                                    {/* <Link className="button button-primary" to={'/signup'}>Signup</Link> */}
                                     </>
                                   }
                                     
@@ -100,7 +100,7 @@ function Home() {
                     className='hero-figure-box hero-figure-box-04'
                     data-rotation='-135deg'
                   ></div>
-                  <div className='hero-figure-box hero-figure-box-05'>
+                  <div className='hero-figure-box hero-figure-box-05 flex-it'>
                   <img src={img} alt=""/>
                   </div>
                   {/* <div className='hero-figure-box hero-figure-box-06'></div> */}

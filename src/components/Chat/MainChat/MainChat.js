@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Input from "../Input/Input"
 import Response from '../response/Response';
 import "./mainChat.css"
-import { FaArrowRight, FaBars} from "react-icons/fa";
+import { FaArrowRight} from "react-icons/fa";
 import { BiLogOut } from 'react-icons/bi';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../../../context/UserAuthContext';
@@ -19,7 +19,6 @@ const MainChat = ({ toggle, toggleHandle })=>{
     const [responseResult, setResponseResult] = useState('');
     const { logOut } = useUserAuth();
 
-    
     const inputHandle = (e)=>{
         e.preventDefault();
 
@@ -93,8 +92,6 @@ const MainChat = ({ toggle, toggleHandle })=>{
                     <Link to={"/"}>
                     <img src={process.env.PUBLIC_URL+"/dist/images/chatge-logo.svg"} width="250px" alt='ge logo' className='navbar-logo'/>
                     </Link>
-                    {/* <span ><Link style={{ textDecoration:'none', color: '#0b87f8' }} to={'/'}>ChatGE</Link></span> */}
-                    {/* <p sty>Health Care</p> */}
                 </div>
 
                 <div onClick={()=> handleLogOut()}>

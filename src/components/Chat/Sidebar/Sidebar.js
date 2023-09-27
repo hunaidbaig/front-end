@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../../context/UserAuthContext";
-import { FaBars} from "react-icons/fa";
-
+import { AiOutlineFileAdd } from 'react-icons/ai';
 import "./sidebar.css";
 import { BiLogOut } from "react-icons/bi";
-const Sidebar = ({ toggle, toggleHandle }) => {
+
+
+
+const Sidebar = ({ toggle, toggleHandle, faqsHandle }) => {
+  
   const { user, logOut } = useUserAuth();
+  const [ promptList, setPromptList ] = useState([])
   const [initials, setInitials] = useState();
 
   useEffect(() => {
@@ -26,14 +30,36 @@ const Sidebar = ({ toggle, toggleHandle }) => {
     }
   };
 
+  const promptHandle = (e)=>{
+    console.log('hello')
+  }
+
   return (
     <div className={ toggle ? 'toggle-sidebar ': 'sidebar'}>
-      <div className='flex-1'>
-        <button className='new-chat'>+ NewChat</button>
+      <div className='flex-faqs'>
+        <p className='faqs'>FAQs</p>
         {/* <button onClick={()=> toggleHandle()} ><FaBars/></button> */}
       </div>
       <div className='chats'>
-        <p>no previous chats...</p>
+        <p onClick={(e)=> faqsHandle(e)} > What is the purpose of this procedural document?</p>
+        <p onClick={(e)=> faqsHandle(e)} > what role does the Finance department play in the onboarding renewal process of ITPs?</p>
+        <p onClick={(e)=> faqsHandle(e)} > Give bullets points What role does the Finance department play in the onboarding renewalprocess of ITPs?</p>
+        <p onClick={(e)=> faqsHandle(e)} > How long does the long-term contract last with distributors?</p>
+      </div>
+      <div className='flex-faqs'>
+        <p className='prompts'>My Prompts <span onClick={(e)=> promptHandle(e)} > <AiOutlineFileAdd /> </span> </p>
+        {/* <button onClick={()=> toggleHandle()} ><FaBars/></button> */}
+      </div>
+      <div className='prompts-chats'>
+
+        {
+          promptList.length === 0 ? <p>You have no Prompts</p> 
+          :
+          promptList.map((questions, index) =>(
+            <p key={index}>{questions}</p>
+          ))
+        }
+        
       </div>
       <div className='flex-2'>
         {/* <button onClick={handleLogOut}>Log out</button> */}

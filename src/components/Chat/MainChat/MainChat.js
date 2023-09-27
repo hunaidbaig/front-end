@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Input from "../Input/Input"
 import Response from '../response/Response';
 import "./mainChat.css"
-import { FaArrowRight} from "react-icons/fa";
+import { FaArrowRight, FaBars} from "react-icons/fa";
 import { BiLogOut } from 'react-icons/bi';
 import { Link, useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../../../context/UserAuthContext';
@@ -10,62 +10,62 @@ import { useUserAuth } from '../../../context/UserAuthContext';
 
 
 
-const MainChat = ({ toggle, toggleHandle })=>{
-    const [text, setText] = useState('');
-    const [conversationList, setConversationList] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [typingBtn, setTypingBtn] = useState(true);
-    const [typing, setTyping] = useState(false);
-    const [responseResult, setResponseResult] = useState('');
+const MainChat = ({ toggle, toggleHandle, conversationList, typingBtn, setTypingBtn,  inputHandle, typing ,text, setText })=>{
+    // const [text, setText] = useState('');
+    // const [conversationList, setConversationList] = useState([]);
+    // const [loading, setLoading] = useState(false);
+    // const [typingBtn, setTypingBtn] = useState(true);
+    // const [typing, setTyping] = useState(false);
+    // const [responseResult, setResponseResult] = useState('');
     const { logOut } = useUserAuth();
 
-    const inputHandle = (e)=>{
-        e.preventDefault();
+    // const inputHandle = (e)=>{
+    //     e.preventDefault();
 
-        setLoading(false);
+    //     setLoading(false);
 
-        const newComponent = <Input text={text} />;
-        const reponseComponent = <Response loading={loading} responseResult={responseResult} />;
+    //     const newComponent = <Input text={text} />;
+    //     const reponseComponent = <Response loading={loading} responseResult={responseResult} />;
 
-        setConversationList([...conversationList, newComponent, reponseComponent]);
+    //     setConversationList([...conversationList, newComponent, reponseComponent]);
 
-        setText('')
-        setTypingBtn(true)
-        setTyping(true);
+    //     setText('')
+    //     setTypingBtn(true)
+    //     setTyping(true);
 
 
-        fetch(`https://flask-ge2-suierlw5oa-uc.a.run.app/query/${text}`)
-        .then((respone=> respone.json() )).then(result=>{
-            const {response} = result;
+    //     fetch(`https://flask-ge2-suierlw5oa-uc.a.run.app/query/${text}`)
+    //     .then((respone=> respone.json() )).then(result=>{
+    //         const {response} = result;
 
-            setConversationList((prevList) => {
-                const updatedList = [...prevList];
-                const lastComponent = updatedList[updatedList.length - 1];
+    //         setConversationList((prevList) => {
+    //             const updatedList = [...prevList];
+    //             const lastComponent = updatedList[updatedList.length - 1];
                 
-                updatedList[updatedList.length - 1] = React.cloneElement(lastComponent, { loading: true, responseResult :response });
+    //             updatedList[updatedList.length - 1] = React.cloneElement(lastComponent, { loading: true, responseResult :response });
                 
-                return updatedList;
-              });
+    //             return updatedList;
+    //           });
 
-              setResponseResult('')
-              setLoading(false)
-              setTyping(false)
+    //           setResponseResult('')
+    //           setLoading(false)
+    //           setTyping(false)
 
-        }).catch(error=>{
+    //     }).catch(error=>{
 
-            setConversationList((prevList) => {
-                const updatedList = [...prevList];
-                const lastComponent = updatedList[updatedList.length - 1];
-                console.log(lastComponent)
+    //         setConversationList((prevList) => {
+    //             const updatedList = [...prevList];
+    //             const lastComponent = updatedList[updatedList.length - 1];
+    //             console.log(lastComponent)
                 
-                updatedList[updatedList.length - 1] = React.cloneElement(lastComponent, { loading: true, responseResult :'unexpected character' });
+    //             updatedList[updatedList.length - 1] = React.cloneElement(lastComponent, { loading: true, responseResult :'unexpected character' });
                 
-                return updatedList;
-              });
+    //             return updatedList;
+    //           });
 
-            console.log('some error occure', error);
-        })
-    }
+    //         console.log('some error occure', error);
+    //     })
+    // }
 
     const navigate = useNavigate();
 
@@ -84,9 +84,9 @@ const MainChat = ({ toggle, toggleHandle })=>{
         <main className="chat">
                
             <nav className='navbar'>
-                    {/* <div className='mobileBtn'>
-                        <button onClick={()=> toggleHandle()} ><FaBars/></button>
-                    </div> */}
+                    <div className='mobileBtn'>
+                        <button onClick={()=> toggleHandle()} ><FaBars /></button>
+                    </div>
                     
                 <div>
                     <Link to={"/"}>

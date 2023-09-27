@@ -84,7 +84,7 @@ const MainChat = ({ promptList ,toggle, toggleHandle, conversationList, typingBt
                     setText(text1)
                     setTypingBtn(text1.trim() === '');
 
-                }} value={text} placeholder="Send a message" type="text" className='chat-input' />
+                }} value={text} placeholder="Enter a Prompt" type="text" className='chat-input' />
                 <button disabled={typingBtn} type='submit' className={typingBtn ? 'submitbtnDisbaled' : 'submitbtn'} onClick={(e) => inputHandle(e)} ><FaArrowRight /></button>
                 <div style={{ display: 'flex', alignItems: 'center' }} disabled={typingBtn} className={typingBtn ? 'submitbtnDisbaled' : 'Savebtn'} onClick={(e) => saveHandle(e)} ><FaSave /> </div>
             </form>

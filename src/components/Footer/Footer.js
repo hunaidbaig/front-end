@@ -12,7 +12,7 @@ const Footer = ()=>{
                                 <img className="header-logo-image" src={process.env.PUBLIC_URL+"dist/images/logo.png"} alt="Logo" width="43px"/>
                             </Link>
                         </div>
-                        <div>&copy; all rights reserved</div>
+                        <div>&copy; All rights reserved.</div>
                     </div>
                 </div>
             </footer>  

@@ -110,6 +110,30 @@
   border-radius: 10px;
 }
 
+.prompts-chats p{
+  cursor: pointer;
+}
+
+/* .prompt-container input{
+  width: 90%;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 3px 4px #0b87f8;
+}
+
+.prompt-container .saveBtn{
+  background-color: #0b87f8;
+  border: none;
+}
+
+.prompt-container .cancelBtn
+
+.prompt-container .cancelBtn:hover{
+  background-color: #ffffff;
+  color: black;
+} */
+
 
 @media only screen and (max-width: 1360px) {
   .sidebar {

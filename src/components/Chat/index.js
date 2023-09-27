@@ -15,6 +15,10 @@ const Chat = ()=>{
     const [typingBtn, setTypingBtn] = useState(true);
     const [typing, setTyping] = useState(false);
     const [responseResult, setResponseResult] = useState('');
+    const [ promptList, setPromptList ] = useState([])
+
+    
+
 
     const toggleHandle = ()=>{
         setToggle(!toggle)
@@ -124,7 +128,7 @@ const Chat = ()=>{
 
     return (
         <div className="chat-container">
-            <Sidebar toggle={toggle} toggleHandle={toggleHandle} faqsHandle={faqsHandle} />
+            <Sidebar toggle={toggle} toggleHandle={toggleHandle} faqsHandle={faqsHandle} setPromptList={setPromptList} promptList={promptList}  />
             <MainChat 
                 toggle={toggle} 
                 toggleHandle={toggleHandle}
@@ -136,7 +140,8 @@ const Chat = ()=>{
                 typing={typing}
                 setTypingBtn={setTypingBtn}
                 setTyping={setTyping}
-                
+                setPromptList={setPromptList}
+                promptList={promptList}
             />
         </div>
     )

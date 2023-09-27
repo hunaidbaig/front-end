@@ -7,11 +7,13 @@ import { BiLogOut } from "react-icons/bi";
 
 
 
-const Sidebar = ({ toggle, toggleHandle, faqsHandle }) => {
+const Sidebar = ({ toggle, toggleHandle, faqsHandle,promptList  }) => {
   
   const { user, logOut } = useUserAuth();
-  const [ promptList, setPromptList ] = useState([])
+  // const [ promptList, setPromptList ] = useState([])
   const [initials, setInitials] = useState();
+  const [ showPrompt, setShowPrompt ] = useState(false);
+  const [prompts, setPrompts] = useState([]);
 
   useEffect(() => {
     if (user?.email) {
@@ -31,6 +33,7 @@ const Sidebar = ({ toggle, toggleHandle, faqsHandle }) => {
   };
 
   const promptHandle = (e)=>{
+    setShowPrompt(true)
     console.log('hello')
   }
 
@@ -47,19 +50,31 @@ const Sidebar = ({ toggle, toggleHandle, faqsHandle }) => {
         <p onClick={(e)=> faqsHandle(e)} > How long does the long-term contract last with distributors?</p>
       </div>
       <div className='flex-faqs'>
-        <p className='prompts'>My Prompts <span onClick={(e)=> promptHandle(e)} > <AiOutlineFileAdd /> </span> </p>
+      {/* <span onClick={(e)=> promptHandle(e)} > <AiOutlineFileAdd /> </span> */}
+        <p className='prompts'>My Prompts  </p>
         {/* <button onClick={()=> toggleHandle()} ><FaBars/></button> */}
       </div>
       <div className='prompts-chats'>
 
         {
-          promptList.length === 0 ? <p>You have no Prompts</p> 
+          promptList.length === 0 ?  <div>You have no Prompts</div> 
           :
           promptList.map((questions, index) =>(
-            <p key={index}>{questions}</p>
+            <p key={index} onClick={(e)=> faqsHandle(e)} >{questions}</p>
           ))
         }
-        
+
+        {/* {
+          showPrompt ? 
+            <div className="prompt-container">
+          
+              <input type='text' value={'dshsd'} placeholder='Save your prompts' /> 
+              <button className="saveBtn">Save</button>
+              <button className="cancelBtn" >Cancel</button>
+            </div>
+            : <></>
+        }
+         */}
       </div>
       <div className='flex-2'>
         {/* <button onClick={handleLogOut}>Log out</button> */}

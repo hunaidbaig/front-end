@@ -151,9 +151,24 @@
 
 .navbar span{
   font-family: League Sparton;
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
+}
 
+.button-content {
+  display: flex;
+  align-items: center;
+}
 
+.clearChat {
+  color: #0B87F8;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.clear-icon{
+  margin-left: 5px;
 }
 
 @media only screen and (max-width: 820px) {
@@ -167,7 +182,7 @@
      display: none;
   }
   .navbar span{
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
   
   }
   .navbar{
@@ -187,6 +202,10 @@
   }
   .chat-input {
     width: 80%;
+  }
+
+  .clearChat {
+    font-size: 0.8rem;
   }
 } 
 

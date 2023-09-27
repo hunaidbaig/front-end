@@ -3,14 +3,14 @@ import Input from "../Input/Input"
 import { FaSave } from 'react-icons/fa';
 import "./mainChat.css"
 import { FaArrowRight, FaBars } from "react-icons/fa";
-import { BiLogOut } from 'react-icons/bi';
+import { AiOutlineClear } from "react-icons/ai";
 import { Link, useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../../../context/UserAuthContext';
 
 
 
 
-const MainChat = ({ promptList ,toggle, toggleHandle, conversationList, typingBtn, setTypingBtn, inputHandle, typing, text, setText, setPromptList }) => {
+const MainChat = ({ promptList ,toggle, toggleHandle, conversationList, typingBtn, setTypingBtn, inputHandle, typing, text, setText, setPromptList, setConversationList }) => {
     // const [text, setText] = useState('');
     // const [conversationList, setConversationList] = useState([]);
     // const [loading, setLoading] = useState(false);
@@ -87,6 +87,10 @@ const MainChat = ({ promptList ,toggle, toggleHandle, conversationList, typingBt
         console.log('save')
     }
 
+    function handleClearChat() {
+        setConversationList([]);
+      }
+
 
     return (
         <main className="chat">
@@ -102,9 +106,16 @@ const MainChat = ({ promptList ,toggle, toggleHandle, conversationList, typingBt
                     </Link>
                 </div>
 
-                <div onClick={() => handleLogOut()}>
+                <button className='clearChat' onClick={handleClearChat}>
+                    <span className='button-content'>
+                        Clear Chat
+                        <AiOutlineClear className="clear-icon" />
+                    </span>
+                </button>
+
+                {/* <div onClick={() => handleLogOut()}>
                     <BiLogOut color='white' cursor={'pointer'} />
-                </div>
+                </div> */}
 
             </nav>
 

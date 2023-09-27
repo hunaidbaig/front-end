@@ -17,7 +17,7 @@ const Chat = ()=>{
     const [responseResult, setResponseResult] = useState('');
     const [ promptList, setPromptList ] = useState([])
 
-    
+
 
 
     const toggleHandle = ()=>{
@@ -142,6 +142,7 @@ const Chat = ()=>{
                 setTyping={setTyping}
                 setPromptList={setPromptList}
                 promptList={promptList}
+                setConversationList={setConversationList}
             />
         </div>
     )

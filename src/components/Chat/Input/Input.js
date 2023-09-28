@@ -14,7 +14,8 @@ function Input({text}) {
   }, [user.email]);
   return (
     <div className="container-input">
-      <span>{initials}</span> <p>
+      <span>{initials}</span> 
+      <p className="letter-transform">
         {text}
       </p>
     </div>

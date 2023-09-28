@@ -46,8 +46,12 @@ const Sidebar = ({ toggle, toggleHandle, faqsHandle,promptList  }) => {
       <div className='chats'>
         <p onClick={(e)=> faqsHandle(e)} > What is the purpose of this procedural document?</p>
         <p onClick={(e)=> faqsHandle(e)} > what role does the Finance department play in the onboarding renewal process of ITPs?</p>
-        <p onClick={(e)=> faqsHandle(e)} > Give bullets points What role does the Finance department play in the onboarding renewalprocess of ITPs?</p>
-        <p onClick={(e)=> faqsHandle(e)} > How long does the long-term contract last with distributors?</p>
+        <p onClick={(e)=> faqsHandle(e)} > What entities does this procedural document apply to?</p>
+        <p onClick={(e)=> faqsHandle(e)} > What is the distribution of long term contract?</p>
+        <p onClick={(e)=> faqsHandle(e)} > How long does the spot dealers are used?</p>
+        <p onClick={(e)=> faqsHandle(e)} > What are the sfdc onboarding docmentation?</p>
+        <p onClick={(e)=> faqsHandle(e)} > What are spot dealers and how long they are used?</p>
+        <p onClick={(e)=> faqsHandle(e)} > What is aggrement creation template?</p>
       </div>
       <div className='flex-faqs'>
       {/* <span onClick={(e)=> promptHandle(e)} > <AiOutlineFileAdd /> </span> */}
@@ -60,7 +64,7 @@ const Sidebar = ({ toggle, toggleHandle, faqsHandle,promptList  }) => {
           promptList.length === 0 ?  <div>You have no Prompts</div> 
           :
           promptList.map((questions, index) =>(
-            <p key={index} onClick={(e)=> faqsHandle(e)} >{questions}</p>
+            <p className="letter-transform" key={index} onClick={(e)=> faqsHandle(e)} >{questions}</p>
           ))
         }
 

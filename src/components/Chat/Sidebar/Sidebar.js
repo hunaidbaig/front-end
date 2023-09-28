@@ -45,7 +45,7 @@ const Sidebar = ({ toggle, toggleHandle, faqsHandle,promptList  }) => {
       </div>
       <div className='chats'>
         <p onClick={(e)=> faqsHandle(e)} > What is the purpose of this procedural document?</p>
-        <p onClick={(e)=> faqsHandle(e)} > what role does the Finance department play in the onboarding renewal process of ITPs?</p>
+        <p onClick={(e)=> faqsHandle(e)} > What role does the Finance department play in the onboarding renewal process of ITPs?</p>
         <p onClick={(e)=> faqsHandle(e)} > What entities does this procedural document apply to?</p>
         <p onClick={(e)=> faqsHandle(e)} > What is the distribution of long term contract?</p>
         <p onClick={(e)=> faqsHandle(e)} > How long does the spot dealers are used?</p>

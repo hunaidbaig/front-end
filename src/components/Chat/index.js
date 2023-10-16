@@ -39,7 +39,7 @@ const Chat = ()=>{
         setTyping(true);
 
 
-        fetch(`https://flask-ge2-suierlw5oa-uc.a.run.app/query/${text}`)
+        fetch(`http://13.233.56.132:5000/query/${text}`)
         .then((respone=> respone.json() )).then(result=>{
             const {response} = result;
 

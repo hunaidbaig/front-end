@@ -136,6 +136,65 @@ function Home() {
 
           <section className='features section'>
             <div className='container'>
+              <h1 className='section-title mt-1' style={{textAlign:" center"}}>Products</h1>
+              <div className='features-inner section-inner has-bottom-divider'>
+                <div className='features-wrap'>
+                  <div className='feature text-center is-revealing'>
+                    <div className='feature-inner'>
+                      <div className='feature-icon'>
+                        <img
+                          src={
+                            process.env.PUBLIC_URL +
+                            "dist/images/feature-icon-01.svg"
+                          }
+                          alt='Feature 01'
+                        />
+                      </div>
+                      <h4 className='feature-title mt-24' style={{textAlign:"left"}}>
+                      ChatGene
+                      </h4>
+                      <p className='text-sm mb-1' style={{textAlign:"left"}}>
+                        Cutting-Edge Solution: Introducing our revolutionary Generative AI, Retrieval Augmented Generation, powered by GPT-4 and Vector Database.
+                      </p>
+                     
+                      <p  className='text-sm mb-1' style={{textAlign:"left"}}>Clarity Amid Chaos: Find clarity in scattered information, saving time and frustration.</p>
+                      <p className='text-sm mb-1' style={{textAlign:"left"}}>Competitive Advantage: It's more than a product; it's a competitive edge in information management. Welcome to the future.</p>
+                    </div>
+                    <Link to={'/chat'} className={'try-me-btn'}>Try me</Link>
+                  </div>
+                  <div className='feature text-center is-revealing'>
+                    <div className='feature-inner'>
+                      <div className='feature-icon'>
+                        <img
+                          src={
+                            process.env.PUBLIC_URL +
+                            "dist/images/feature-icon-02.svg"
+                          }
+                          alt='Feature 02'
+                        />
+                      </div>
+                      <h4 className='feature-title mt-24' style={{textAlign:"left"}}>
+                          ChatCsv
+                      </h4>
+                      <p className='text-sm mb-1' style={{textAlign:"left"}}>
+                      Effortless Data Analysis: Our innovative product simplifies complex data analysis, generating graphs, tables, and text insights from CSV data.
+                      </p>
+                      <p className='text-sm mb-1' style={{textAlign:"left"}}>
+                      User-Friendly: Say goodbye to data complexities. We provide a streamlined, user-friendly approach to data analysis, making it accessible for all.
+                      </p>
+                      <p className='text-sm mb-1' style={{textAlign:"left"}} >
+                      Let Data Speak: Unleash your data's potential and let it tell its story with ease.
+                      </p>
+                    </div>
+                    <Link to={'/chat-sales'} className={'try-me-btn'}>Try me</Link >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className='features section'>
+            <div className='container'>
               <h1 className='hero-title mt-1'>Problem Faced By Enterprises</h1>
               <div className='features-inner section-inner has-bottom-divider'>
                 <div className='features-wrap'>

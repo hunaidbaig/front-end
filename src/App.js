@@ -14,7 +14,8 @@ function App() {
         <Route path='/' element={ <ProtectedRoute><Home /></ProtectedRoute>} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/chat' element={ <ProtectedRoute><Chat /></ProtectedRoute>} />
+        <Route path='/chat' element={ <ProtectedRoute><Chat chatType= {'gene'}  /></ProtectedRoute>} />
+        <Route path='/chat-sales' element={ <ProtectedRoute><Chat chatType={'csv'} /></ProtectedRoute>} />
       </Routes>
            
     </div>

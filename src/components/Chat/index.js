@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar/Sidebar";
 
 import './style.css'
 
-const Chat = ()=>{
+const Chat = ({ chatType })=>{
 
     const [toggle, setToggle] = useState(false)
     const [text, setText] = useState('');
@@ -39,15 +39,39 @@ const Chat = ()=>{
         setTyping(true);
 
 
-        fetch(`http://13.233.56.132:5000/query/${text}`)
-        .then((respone=> respone.json() )).then(result=>{
-            const {response} = result;
 
+        fetch(`${ chatType === 'csv' ? process.env.REACT_APP_CHAT_SALES_URL : process.env.REACT_APP_CHAT_GENE_URL}/${text}`)
+        .then((respone=> respone.json() )).then(result=>{
+            let type = null;
+            let response = null;
+            // const {response} = result;
+            const {text, table, image} = result;
+
+            console.log(table, 'table');
+
+            if(text){
+                response = text;
+            }
+            else if(table){
+                type = 'table'
+                response = table;
+            }
+            else if(image){
+                response = image;
+                type = 'image'
+            }
+            else{
+                const {response : re} = result;
+                response = re;
+
+            }
+
+            // console.log(result, 'hello')
             setConversationList((prevList) => {
                 const updatedList = [...prevList];
                 const lastComponent = updatedList[updatedList.length - 1];
                 
-                updatedList[updatedList.length - 1] = React.cloneElement(lastComponent, { loading: true, responseResult :response });
+                updatedList[updatedList.length - 1] = React.cloneElement(lastComponent, { loading: true, responseResult :response, type: type });
                 
                 return updatedList;
               });
@@ -57,7 +81,7 @@ const Chat = ()=>{
               setTyping(false)
 
         }).catch(error=>{
-
+            
             setConversationList((prevList) => {
                 const updatedList = [...prevList];
                 const lastComponent = updatedList[updatedList.length - 1];
@@ -67,7 +91,9 @@ const Chat = ()=>{
                 
                 return updatedList;
               });
-
+              setTypingBtn(true)
+            setTyping(false);
+            setLoading(false)
             console.log('some error occure', error);
         })
     }
@@ -90,15 +116,38 @@ const Chat = ()=>{
         setTyping(true);
 
 
-        fetch(`https://flask-ge2-suierlw5oa-uc.a.run.app/query/${faqsText}`)
+        fetch(`${ chatType === 'csv' ? process.env.REACT_APP_CHAT_SALES_URL : process.env.REACT_APP_CHAT_GENE_URL}/${faqsText}`)
         .then((respone=> respone.json() )).then(result=>{
-            const {response} = result;
+            let type = null;
+            let response = null;
+            // const {response} = result;
+            const {text, table, image} = result;
 
+            // console.log(table, 'table');
+
+            if(text){
+                response = text;
+            }
+            else if(table){
+                type = 'table'
+                response = table;
+            }
+            else if(image){
+                response = image;
+                type = 'image'
+            }
+            else{
+                const {response : re} = result;
+                response = re;
+
+            }
+
+            // console.log(result, 'hello')
             setConversationList((prevList) => {
                 const updatedList = [...prevList];
                 const lastComponent = updatedList[updatedList.length - 1];
                 
-                updatedList[updatedList.length - 1] = React.cloneElement(lastComponent, { loading: true, responseResult :response });
+                updatedList[updatedList.length - 1] = React.cloneElement(lastComponent, { loading: true, responseResult :response, type: type });
                 
                 return updatedList;
               });
@@ -108,7 +157,8 @@ const Chat = ()=>{
               setTyping(false)
 
         }).catch(error=>{
-
+            setLoading(false)
+            setTyping(false);
             setConversationList((prevList) => {
                 const updatedList = [...prevList];
                 const lastComponent = updatedList[updatedList.length - 1];
@@ -118,6 +168,7 @@ const Chat = ()=>{
                 
                 return updatedList;
               });
+             
 
             console.log('some error occure', error);
         })
@@ -128,7 +179,7 @@ const Chat = ()=>{
 
     return (
         <div className="chat-container">
-            <Sidebar toggle={toggle} toggleHandle={toggleHandle} faqsHandle={faqsHandle} setPromptList={setPromptList} promptList={promptList}  />
+            <Sidebar toggle={toggle} toggleHandle={toggleHandle} faqsHandle={faqsHandle} setPromptList={setPromptList} promptList={promptList} chatType={chatType}  />
             <MainChat 
                 toggle={toggle} 
                 toggleHandle={toggleHandle}

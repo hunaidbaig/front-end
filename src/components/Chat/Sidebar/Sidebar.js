@@ -7,7 +7,7 @@ import { BiLogOut } from "react-icons/bi";
 
 
 
-const Sidebar = ({ toggle, toggleHandle, faqsHandle,promptList  }) => {
+const Sidebar = ({ toggle, toggleHandle, faqsHandle,promptList, chatType  }) => {
   
   const { user, logOut } = useUserAuth();
   // const [ promptList, setPromptList ] = useState([])
@@ -43,6 +43,18 @@ const Sidebar = ({ toggle, toggleHandle, faqsHandle,promptList  }) => {
         <p className='faqs'>FAQs</p>
         {/* <button onClick={()=> toggleHandle()} ><FaBars/></button> */}
       </div>
+      {
+        chatType === 'csv' ?
+        <div className='chats'>
+        <p onClick={(e)=> faqsHandle(e)} > Which customer placed the most orders in Quarter 2 of 2022, and what was the total quantity of items they ordered during that quarter?</p>
+        <p onClick={(e)=> faqsHandle(e)} > Which product 'Style' had the highest average order quantity, and what was that quantity?</p>
+        <p onClick={(e)=> faqsHandle(e)} > Visualize the growth of the social network over time, showing the number of new users joining each month. Are there any significant spikes in user growth?</p>
+        <p onClick={(e)=> faqsHandle(e)} > Create a table summarizing the average order amount for each category.</p>
+        <p onClick={(e)=> faqsHandle(e)} > Provide a table showing the top 10 rows of the dataset, including all columns.</p>
+        <p onClick={(e)=> faqsHandle(e)} > What is the overall order fulfillment status breakdown in terms of percentages?</p>
+        <p onClick={(e)=> faqsHandle(e)} > Show a table listing all orders with a 'Status' of 'Pending'</p>
+      </div>
+        :
       <div className='chats'>
         <p onClick={(e)=> faqsHandle(e)} > What is the purpose of this procedural document?</p>
         <p onClick={(e)=> faqsHandle(e)} > What role does the Finance department play in the onboarding renewal process of ITPs?</p>
@@ -53,6 +65,7 @@ const Sidebar = ({ toggle, toggleHandle, faqsHandle,promptList  }) => {
         <p onClick={(e)=> faqsHandle(e)} > What are spot dealers and how long they are used?</p>
         <p onClick={(e)=> faqsHandle(e)} > What is aggrement creation template?</p>
       </div>
+      }
       <div className='flex-faqs'>
       {/* <span onClick={(e)=> promptHandle(e)} > <AiOutlineFileAdd /> </span> */}
         <p className='prompts'>My Prompts  </p>

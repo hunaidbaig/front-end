@@ -5,6 +5,7 @@ import { FaArrowRight, FaBars } from "react-icons/fa";
 import { AiOutlineClear } from "react-icons/ai";
 import { Link, useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../../../context/UserAuthContext';
+import { BiLogOut } from 'react-icons/bi';
 
 
 
@@ -14,15 +15,15 @@ const MainChat = ({ promptList ,toggle, toggleHandle, conversationList, typingBt
 
     const navigate = useNavigate();
 
-    // const handleLogOut = async () => {
-    //     try {
-    //         await logOut();
-    //         localStorage.clear();
-    //         navigate("/");
-    //     } catch (err) {
-    //         console.log(err.message);
-    //     }
-    // };
+    const handleLogOut = async () => {
+        try {
+            await logOut();
+            localStorage.clear();
+            navigate("/");
+        } catch (err) {
+            console.log(err.message);
+        }
+    };
 
 
     const saveHandle = () => {
@@ -50,16 +51,18 @@ const MainChat = ({ promptList ,toggle, toggleHandle, conversationList, typingBt
                         <img src={process.env.PUBLIC_URL + "/dist/images/chatge-logo.svg"} width="250px" alt='ge logo' className='navbar-logo' />
                     </Link>
                 </div>
+                
+                <div className='top-right'>
+                    <button className='clearChat' onClick={handleClearChat}>
+                        <span className='button-content'>
+                            <AiOutlineClear className="clear-icon" />
+                        </span>
+                    </button>
+                    <div onClick={() => handleLogOut()}>
+                        <BiLogOut color='white' cursor={'pointer'} />
+                    </div>
+                </div>
 
-                <button className='clearChat' onClick={handleClearChat}>
-                    <span className='button-content'>
-                        <AiOutlineClear className="clear-icon" />
-                    </span>
-                </button>
-
-                {/* <div onClick={() => handleLogOut()}>
-                    <BiLogOut color='white' cursor={'pointer'} />
-                </div> */}
 
             </nav>
 
